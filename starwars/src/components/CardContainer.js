@@ -5,8 +5,11 @@ import axios from 'axios'
 
 const ContainerDiv = styled.div`
 	width: 90%
+	margin: 0 auto;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
+	border: 2px solid white;
 `
 
 export default function Container(props) {
