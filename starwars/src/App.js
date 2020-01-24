@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -11,10 +11,18 @@ text-shadow: 1px 1px 5px #fff;
 `
 
 const App = () => {
-
+  useEffect(() => {
+    axios.get('https://swapi.co/api/people/')
+    .then(res => {
+      console.log(res.data.results)
+    })
+    .catch(err => {
+      console.log('Sorry bro no data this time', err)
+    })
+  }, [])
   return (
     <AppDiv>
-      <AppH1 className='Header'>React Wars</AppH1>
+      <AppH1>React Wars</AppH1>
     </AppDiv>
   );
 }
